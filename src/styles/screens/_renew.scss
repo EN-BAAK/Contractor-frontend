@@ -1,0 +1,24 @@
+.renew {
+  background-color: var(--c-white-main);
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  .contracting-holder {
+    background-color: var(--c-transparent);
+    @include centering;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1001;
+  }
+  .renew-form-holder {
+    background-color: var(--c-transparent);
+    @include centering;
+    position: absolute;
+    @include set_position(0, 0, 0, 0);
+  }
+}

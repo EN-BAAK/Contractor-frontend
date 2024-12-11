@@ -1,0 +1,47 @@
+.user-form {
+  background-color: var(--c-white-main);
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 15px 15px;
+  box-shadow: 1px 1px 15px 0 var(--c-white-shadow);
+  @include prefixer(border-radius, 12px);
+
+  @include breakpoints(lg) {
+    max-width: 450px;
+    margin: 0;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    @include centering;
+
+    @include breakpoints(lg) {
+      margin-bottom: 45px;
+    }
+
+    h4 {
+      background-color: var(--c-main);
+      width: fit-content;
+      padding: 0 15px 8px 15px;
+      border-end-start-radius: 8px;
+      border-end-end-radius: 8px;
+      font-size: 22px;
+      color: var(--c-white-main);
+    }
+  }
+
+  .disabled {
+    background-color: #777;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  label {
+    width: 75px;
+    text-wrap: nowrap;
+  }
+
+  input {
+    flex: 1;
+  }
+}

@@ -1,0 +1,98 @@
+@include keyf("up") {
+    from {
+        @include prefixer(transform, translateY(200px));
+    }
+    to {
+        @include prefixer(transform, translateY(0));
+        @include opacity(1);
+    }
+}
+@include keyf("down") {
+    from {
+        @include prefixer(transform, translateY(-200px));
+    }
+    to {
+        @include prefixer(transform, translateY(0));
+        @include opacity(1);
+    }
+}
+@include keyf("up-big") {
+    from {
+        @include prefixer(transform, translateY(200px) scale(0));
+    }
+    to {
+        @include prefixer(transform, translateY(0) scale(1));
+        @include opacity(1);
+    }
+}
+@include keyf("big") {
+    from {
+        @include prefixer(transform, scale(0));
+    }
+    to {
+        @include prefixer(transform, scale(1));
+        @include opacity(1);
+    }
+}
+@include keyf("right") {
+    from {
+        @include prefixer(transform, translateX(-200px));
+    }
+    to {
+        @include prefixer(transform, translateX(0));
+        @include opacity(1);
+    }
+}
+@include keyf("left") {
+    from {
+        @include prefixer(transform, translateX(+200px));
+    }
+    to {
+        @include prefixer(transform, translateX(0));
+        @include opacity(1);
+    }
+}
+@include keyf("right-big") {
+    from {
+        @include prefixer(transform, translateX(-200px) scale(0));
+    }
+    to {
+        @include prefixer(transform, translateX(0) scale(1));
+        @include opacity(1);
+    }
+}
+@include keyf("left-big") {
+    from {
+        @include prefixer(transform, translateX(+200px) scale(0));
+    }
+    to {
+        @include prefixer(transform, translateX(0) scale(1));
+        @include opacity(1);
+    }
+}
+@include keyf("load") {
+    from {
+        @include prefixer(transform, rotate(0));
+    }
+    to {
+        @include prefixer(transform, rotate(360deg));
+    }
+}
+@include keyf("complete-line") {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@include keyf("appear") {
+    from {
+        top: 250px;
+    }
+    to {
+        top: 90px;
+        @include prefixer(transform, scale(1) translateX(-50%))
+    }
+}

@@ -1,0 +1,35 @@
+.settings {
+  @include centering;
+  gap: 15px;
+  top: 15px;
+  &.tester {
+    position: fixed;
+    right: 15px;
+  }
+
+  &.secrter {
+    position: absolute;
+    left: 15px;
+  }
+
+  .icon {
+    background-color: var(--c-main);
+    @include same-scale(30px);
+    @include centering;
+    @include prefixer(border-radius, 50%);
+    font-size: 18px;
+    color: var(--c-white-main);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+
+    .language-box-holder {
+      position: absolute;
+      @include center-x;
+      bottom: -110px;
+      z-index: 5000;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.login {
+  background-color: var(--c-white-main);
+  height: 100vh;
+  width: "100%";
+  @include centering;
+  position: relative;
+
+  .content {
+    width: calc(100% - 20px);
+    padding: 0 15px 20px 15px;
+    @include prefixer(border-radius, 8px);
+    box-shadow: 1px 1px 15px 0 var(--c-white-shadow);
+
+    @include breakpoints(md) {
+      width: 450px;
+    }
+
+    @include breakpoints(lg) {
+      width: 350px;
+    }
+
+    .title {
+      margin-bottom: 45px;
+      @include centering;
+
+      h4 {
+        background-color: var(--c-main);
+        width: fit-content;
+        padding: 0 15px 8px 15px;
+        border-end-start-radius: 8px;
+        border-end-end-radius: 8px;
+        font-size: 22px;
+        color: var(--c-white-main);
+      }
+    }
+
+    .send-btn {
+      background-color: var(--c-main);
+      margin: 0 auto;
+      padding: 4px 20px;
+      border-color: inherit;
+      display: block;
+
+      &:hover {
+        background-color: var(--c-main-shadow);
+      }
+
+      &.submitting {
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .lang {
+    background-color: var(--c-main);
+    @include same-scale(35px);
+    @include prefixer(border-radius, 50%);
+    @include centering;
+    font-size: 20px;
+    color: var(--c-white-main);
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+
+    .lang-holder {
+      position: absolute;
+      bottom: -65px;
+      @include center-x;
+    }
+  }
+}

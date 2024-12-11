@@ -1,0 +1,101 @@
+.contractor-table {
+  overflow: hidden;
+  .buttons {
+    margin: 15px 0;
+    padding: 0 50px;
+    @include centering;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    button {
+      padding: 4px 20px;
+      border: none;
+      @include prefixer(border-radius, 6px);
+      font-size: 20px;
+      color: var(--c-white-main);
+    }
+
+    input {
+      width: 300px;
+    }
+
+    .remove-box {
+      background-color: var(--c-main);
+      @include same-scale(30px);
+      @include prefixer(border-radius, 8px);
+      border: 1px solid var(--c-white-main);
+      @include centering;
+      color: var(--c-white-shadow);
+      font-size: 45px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--c-main-shadow);
+      }
+    }
+
+    .refresh {
+      @include same-scale(30px);
+      display: block;
+      margin-left: auto;
+      @include prefixer(border-radius, 8px);
+      @include prefixer(transition, var(--time-transition));
+      color: #777;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--c-main);
+      }
+    }
+  }
+
+  .table-holder {
+    max-height: calc(100% - 56px);
+    min-width: 100%;
+    padding-bottom: 15px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--c-main-shadow);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--c-main);
+    }
+    table {
+      .main-row th {
+        background-color: var(--c-main);
+        color: var(--c-white-main);
+      }
+
+      tr {
+        &.selected td {
+          background-color: var(--c-main-transparent);
+        }
+      }
+
+      td {
+        text-wrap: nowrap;
+        color: var(--c-black-main);
+
+        &.passed {
+          color: var(--c-main-error);
+        }
+
+        &.long-row {
+          text-wrap: wrap;
+          max-width: 225px;
+        }
+      }
+    }
+  }
+}

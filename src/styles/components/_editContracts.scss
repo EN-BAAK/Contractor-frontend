@@ -1,0 +1,40 @@
+.edit-contracts {
+  background-color: rgba(91, 83, 83, 0.29);
+  @include centering;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+
+  &.hide {
+    visibility: hidden;
+    display: none;
+  }
+
+  .submit-btn {
+    background-color: var(--c-main);
+    width: fit-content;
+    margin: 10px 0 5px 0;
+    padding: 4px 24px;
+    border: inherit;
+  }
+
+  .exit {
+    background-color: var(--c-main);
+    width: fit-content;
+    @include centering;
+    @include prefixer(border-radius, 50%);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 38px;
+    color: var(--c-white-main);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.contractor-form {
+  background-color: var(--c-white-main);
+  padding: 0 15px 20px 15px;
+  @include prefixer(border-radius, 8px);
+  box-shadow: 1px 1px 15px 0 var(--c-white-shadow);
+
+  @include breakpoints(md) {
+    width: 450px;
+  }
+
+  @include breakpoints(lg) {
+    width: 350px;
+  }
+
+  .title {
+    margin-bottom: 45px;
+    @include centering;
+
+    h4 {
+      background-color: var(--c-main);
+      width: fit-content;
+      padding: 0 15px 8px 15px;
+      border-end-start-radius: 8px;
+      border-end-end-radius: 8px;
+      font-size: 22px;
+      color: var(--c-white-main);
+    }
+  }
+
+  .user {
+    background-color: var(--c-white-main);
+    width: fit-content;
+    margin-top: 15px;
+    padding: 4px 24px;
+    border: 3px solid var(--c-main);
+    @include prefixer(border-radius, 8px);
+    @include centering;
+    gap: 12px;
+    font-size: 20px;
+    color: var(--c-main);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .send-btn {
+    background-color: var(--c-main);
+    width: fit-content;
+    padding: 4px 20px;
+    border-color: inherit;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+      border-color: inherit;
+    }
+  }
+
+  .exit {
+    background-color: var(--c-main);
+    @include centering;
+    @include prefixer(border-radius, 50%);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 38px;
+    color: var(--c-white-main);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.renew-form {
+  background-color: var(--c-white-main);
+  width: 100%;
+  padding: 0 15px 15px;
+  @include prefixer(border-radius, 12px);
+  box-shadow: 1px 1px 15px 0 var(--c-white-shadow);
+  position: relative;
+
+  @include breakpoints(sm) {
+    max-width: 450px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    @include centering;
+
+    @include breakpoints(lg) {
+      margin-bottom: 45px;
+    }
+
+    h4 {
+      background-color: var(--c-main);
+      width: fit-content;
+      padding: 0 15px 8px 15px;
+      border-end-start-radius: 8px;
+      border-end-end-radius: 8px;
+      font-size: 22px;
+      color: var(--c-white-main);
+    }
+  }
+
+  .disabled {
+    background-color: #777;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  label {
+    width: 75px;
+    text-wrap: nowrap;
+  }
+
+  input {
+    flex: 1;
+  }
+
+  .close {
+    background-color: var(--c-main);
+    width: fit-content;
+    @include centering;
+    @include prefixer(border-radius, 50%);
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 38px;
+    color: var(--c-white-main);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.tester-card {
+  background-color: var(--c-white-main);
+  margin: 15px auto;
+  padding: 5px 24px 5px 12px;
+  box-shadow: 1px 1px 15px 0 var(--c-white-shadow);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    background-color: rgba(25, 228, 25, 0.947);
+    width: 6px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &.near::before {
+    background-color: var(--c-main-error);
+  }
+
+  p {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    &.date {
+      font-size: 13px;
+      color: #777;
+    }
+
+    &.order {
+      background-color: var(--c-main);
+      @include same-scale(50px);
+      @include centering;
+      border-top-right-radius: 15px;
+      position: absolute;
+      left: -4px;
+      bottom: -4px;
+      color: var(--c-white-main);
+    }
+  }
+
+  .floating-icon {
+    @include centering;
+    gap: 15px;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+
+    .icon {
+      font-size: 22px;
+      color: var(--c-main);
+      svg {
+        cursor: pointer;
+
+        &.unchecked.disable {
+          color: #777;
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.user-table {
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--c-main-shadow);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--c-main);
+  }
+
+  @include breakpoints(lg) {
+    margin-left: 50px;
+  }
+
+  @include breakpoints(md) {
+    min-width: 450px;
+  }
+
+  .show-tester {
+    position: relative;
+    input {
+      appearance: none;
+      visibility: none;
+    }
+
+    &::after {
+      content: "";
+      background-color: transparent;
+      @include same-scale(15px);
+      border: 1px solid var(--c-main);
+      @include prefixer(border-radius, 2px);
+      position: absolute;
+      left: -20px;
+      @include center-y;
+    }
+
+    &::before {
+      content: "";
+      background-color: transparent;
+      @include same-scale(15px);
+      border: 1px solid var(--c-main);
+      @include prefixer(border-radius, 2px);
+      @include centering;
+      font-size: 15px;
+      color: var(--c-white-main);
+      position: absolute;
+      left: -20px;
+      @include center-y;
+    }
+
+    &.active::before {
+      content: "\2713";
+      background-color: var(--c-main);
+    }
+  }
+
+  .search {
+    margin-left: auto;
+  }
+
+  .remove-box {
+    background-color: var(--c-main);
+    @include same-scale(30px);
+    @include prefixer(border-radius, 8px);
+    border: 1px solid var(--c-white-main);
+    @include centering;
+    color: var(--c-white-shadow);
+    font-size: 45px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+  }
+
+  .refresh {
+    font-size: 20px;
+    color: var(--c-black-main);
+    cursor: pointer;
+    @include prefixer(transition, var(--time-transition));
+
+    &:hover {
+      color: var(--c-main);
+    }
+  }
+
+  table {
+    // min-width: 500px;
+    .main-row th {
+      background-color: var(--c-main);
+      color: var(--c-white-main);
+    }
+
+    tr {
+      &.admin {
+        td {
+          background-color: var(--c-main-transparent);
+        }
+      }
+      &.selected td {
+        background-color: var(--c-main-transparent);
+      }
+    }
+
+    td {
+      text-wrap: nowrap;
+      color: var(--c-black-main);
+    }
+  }
+}

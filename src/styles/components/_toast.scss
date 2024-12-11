@@ -1,0 +1,45 @@
+.my-toast {
+  background-color: var(--c-white-main);
+  width: 350px;
+  padding: 16px 4px 16px 16px;
+  @include prefixer(border-radius, 6px);
+  box-shadow: 1px 1px 15px 0 #e1e1e1;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  @include prefixer(transform, scale(0) translateX(-50%));
+  left: 50%;
+  z-index: 1050;
+  overflow: hidden;
+  @include animation(appear, 0.5s linear forwards);
+  .icon {
+    margin-right: 12px;
+    padding: 2px;
+    @include prefixer(border-radius, 50%);
+    @include centering;
+    font-size: 20px;
+    color: var(--c-white-main);
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+  .line {
+    height: 4px;
+    position: absolute;
+    @include set-position(auto, 0, 0, 0);
+    &.er {
+      background-color: #ff00005d;
+    }
+    &.suc {
+      background-color: #00ff005d;
+    }
+    .inner-line {
+      height: 4px;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      @include animation(complete-line, 2s linear);
+    }
+  }
+}

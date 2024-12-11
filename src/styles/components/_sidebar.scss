@@ -1,0 +1,98 @@
+.sidebar {
+  position: relative;
+  overflow: hidden;
+  box-shadow: -1px 0 8px 0 var(--c-white-shadow);
+
+  @include breakpoints(xl) {
+    min-width: 195px;
+  }
+
+  .content {
+    background-color: var(--c-white-main);
+    width: 195px;
+    height: 100vh;
+    padding: 15px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: -195px;
+    @include prefixer(transition, var(--time-transition));
+
+    &.active {
+      right: 0;
+    }
+
+    @include breakpoints(xl) {
+      position: static;
+      margin: 0;
+    }
+
+    img {
+      width: 120px;
+      display: block;
+      margin: 0 auto 50px;
+    }
+
+    > li {
+      margin: 20px 0;
+
+      &:first-of-type {
+        margin-top: -35px;
+      }
+
+      a,
+      button {
+        background-color: var(--c-white-main);
+        width: 100%;
+        padding: 4px 8px;
+        border: none;
+        @include prefixer(border-radius, 25px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-wrap: nowrap;
+        gap: 12px;
+        position: relative;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--c-main);
+        @include prefixer(transition, var(--time-transition));
+
+        svg {
+          width: 25px;
+        }
+
+        &:hover,
+        &.active {
+          background-color: var(--c-main);
+          color: var(--c-white-main);
+        }
+
+        .language-box-holder {
+          position: absolute;
+          @include center-x;
+          bottom: -50px;
+          z-index: 1000;
+        }
+      }
+    }
+    .opener {
+      background-color: var(--c-main);
+      @include same-scale(35px);
+      @include centering;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      position: absolute;
+      left: -35px;
+      top: 50px;
+      font-size: 20px;
+      color: var(--c-white-main);
+      cursor: pointer;
+
+      @include breakpoints(xl) {
+        display: none;
+      }
+    }
+  }
+}

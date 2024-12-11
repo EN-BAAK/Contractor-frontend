@@ -1,0 +1,19 @@
+$xs: "(max-width: 575.9px)";
+$sm: "(min-width: 576px)";
+$md: "(min-width: 768px)";
+$lg: "(min-width: 992px)";
+$xl: "(min-width: 1200px)";
+$xxl: "(min-width: 1400px)";
+:root {
+  --time-transition: 0.3s;
+  --time-long: 1s;
+  --c-white-main: #fff;
+  --c-white-transparent: #f8f8f8;
+  --c-black-main: #000;
+  --c-white-shadow: #e1e1e1;
+  --c-main: #08a1b8;
+  --c-main-shadow: #1a9fcc;
+  --c-main-transparent: #1a82cc66;
+  --c-main-error: #e00;
+  --c-transparent: #f1f1f173;
+}

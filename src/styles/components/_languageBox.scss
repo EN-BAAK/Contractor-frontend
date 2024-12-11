@@ -1,0 +1,21 @@
+.lang-box {
+  background-color: var(--c-white-main);
+  padding: 2px 20px;
+  box-shadow: 1px 1px 15px 0 var(--c-white-shadow);
+  @include prefixer(border-radius, 4px);
+  color: var(--c-black-main);
+
+  &.hide {
+    @include opacity(0);
+    visibility: hidden;
+    display: none;
+  }
+
+  li {
+    font-size: 18px;
+    &.active,
+    &:hover {
+      color: var(--c-main);
+    }
+  }
+}

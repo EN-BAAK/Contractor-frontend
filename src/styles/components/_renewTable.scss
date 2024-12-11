@@ -1,0 +1,105 @@
+.renew-table {
+  width: 100%;
+  overflow: hidden;
+
+  .my-btn {
+    padding: 6px 50px;
+    margin: 0 8px;
+    display: block;
+    @include prefixer(border-radius, 8px);
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    color: var(--c-white-main) !important;
+  }
+
+  .remove-box {
+    background-color: var(--c-main);
+    @include same-scale(30px);
+    @include prefixer(border-radius, 8px);
+    border: 1px solid var(--c-white-main);
+    @include centering;
+    color: var(--c-white-shadow);
+    font-size: 45px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-main-shadow);
+    }
+  }
+
+  .refresh {
+    font-size: 20px;
+    color: var(--c-black-main);
+    cursor: pointer;
+    @include prefixer(transition, var(--time-transition));
+
+    &:hover {
+      color: var(--c-main);
+    }
+  }
+
+  .table-holder {
+    width: 100%;
+    max-height: calc(100% - 110px);
+    overflow: auto;
+
+    &.secrter {
+      max-height: calc(100vh - 50px);
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--c-main-shadow);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--c-main);
+    }
+
+    table {
+      .main-row th {
+        background-color: var(--c-main);
+        color: var(--c-white-main);
+      }
+
+      tr {
+        &.selected td {
+          background-color: var(--c-main-transparent);
+        }
+
+        td {
+          text-wrap: wrap;
+          max-width: 200px;
+          min-width: 130px;
+
+          @include breakpoints(sm) {
+            min-width: 150px;
+          }
+
+          @include breakpoints(lg) {
+            min-width: 115px;
+          }
+        }
+      }
+
+      td {
+        text-wrap: nowrap;
+        color: var(--c-black-main);
+
+        &.notes-row {
+          min-width: 200px;
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}

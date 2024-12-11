@@ -1,0 +1,31 @@
+.testers {
+  padding-top: 45px;
+  .emptyMessage {
+    text-align: center;
+    font-size: 22px;
+    color: var(--c-black-main);
+  }
+
+  .title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--c-black-main);
+  }
+
+  .settings-holder {
+    position: relative;
+    z-index: 1000;
+  }
+
+  form {
+    margin-bottom: 5px;
+    @include centering;
+    .select-holder {
+      background-color: transparent;
+      width: fit-content;
+      display: inline-block;
+    }
+  }
+}
