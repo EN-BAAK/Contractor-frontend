@@ -75,15 +75,16 @@ To toggle the project:
    npm install
    ```
 
-3. Build the project:
+3. Create a `.env` file and add the following:
+   ```env
+   VITE_API_BASE_URL=http://localhost:3008
+   ```
+
+4. Build the project:
    ```bash
    npm run build
    ```
 
-4. Create a `.env` file and add the following:
-   ```env
-   VITE_API_BASE_URL=http://localhost:3008
-   ```
 
 5. Clone the backend repository:
    ```bash
