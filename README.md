@@ -1,30 +1,97 @@
-# React + TypeScript + Vite
+# Contractor-frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the frontend for the Contractor Management System. It is built using:
 
-Currently, two official plugins are available:
+- Vite
+- React
+- TypeScript
+- SASS
+- Bootstrap 5
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The website is fully responsive and designed for all screen sizes. The primary language of the website is Arabic, with an option to toggle the language.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### General
 
-- Configure the top-level `parserOptions` property like this:
+- **Login Page**:
+  - Login form for all users using:
+    - Phone number
+    - Password
+  - Button to change the language.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Admin Panel
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **Sidebar Navigation**:
+   - Includes a logo and links to:
+     - Users
+     - Contractors
+     - Completed Tasks
+     - Tasks
+     - Change Language
+     - Logout
+
+2. **Users Page**:
+   - Manage users:
+     - Add, remove, and edit specific users.
+   - Table on the right to display user details.
+   - Control form on the left with a submit button for task creation.
+
+3. **Contractors Page** (for Admin and Secretary):
+   - Table displaying contractor data.
+   - Options to add, delete, or edit contractors.
+   - Control tools on top of the table for filtering and management.
+   - for secretary there is a language button.
+
+4. **Tasks Page**:
+   - Table displaying uncompleted tasks.
+   - Control tools on top of the table.
+   - Tasks with overdue dates are highlighted in red.
+
+5. **Completed Tasks Page**:
+   - Similar to the tasks page but displays completed tasks.
+
+### Tester Panel
+
+1. **Tasks Page**:
+   - Accessible only via mobile.
+   - Displays tasks assigned to the tester:
+     - Pending tasks.
+     - Completed tasks.
+   - Tasks are sorted by date.
+   - Overdue tasks are highlighted in red.
+
+## Setup
+
+To toggle the project:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/EN-BAAK/Contractor-frontend.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Build the project:
+   ```bash
+   npm run build
+   ```
+
+4. Create a `.env` file and add the following:
+   ```env
+   VITE_API_BASE_URL=http://localhost:3008
+   ```
+
+5. Clone the backend repository:
+   ```bash
+   git clone https://github.com/EN-BAAK/Contractor-server.git
+   ```
+
+6. Follow the backend README file for further documentation and setup instructions.
+
+---
+
+**Designed and coded by me.**
